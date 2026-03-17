@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A visually stunning landing page featuring an engaging 3D background animation.">
+    <title>Stunning 3D Spline Interactive Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">OASIS</a>
+        <div class="nav-links">
+            <a href="#">Showcase</a>
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Background Video -->
+    <section class="hero">
+        <div class="video-container">
+            <!-- Ensure attributes are present to allow autoplay on all devices -->
+            <video autoplay loop muted playsinline id="bg-video">
+                <source src="https://cdn.spline.design/_assets/_videos/usecase-6.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <!-- Dark Overlay for better text readability -->
+        <div class="overlay"></div>
+
+        <div class="content">
+            <h1>Immersive Web Experiences</h1>
+            <p>Step into the future of digital design. Create breathtaking, interactive, and seamless web experiences that captivate your audience from the very first glance.</p>
+            <a href="#" class="cta-button">Start Exploring</a>
+        </div>
+    </section>
+
+    <!-- Script to handle video playback performance -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const video = document.getElementById('bg-video');
+            if(video) {
+                // Ensure the video plays seamlessly
+                let playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(_ => {
+                        console.warn("Auto-play prevented by browser. Might require user interaction.");
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
